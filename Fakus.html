@@ -1,35 +1,23 @@
-<!doctype html>
-
-<html lang="en"> 
-
- <head> 
-
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-  <title> OC Home </title> 
-
-  <link rel="stylesheet" href="./style.css"> 
-
- </head> 
-
- <body> <!-- partial:index.partial.html --> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakusByPass</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <div class="content-container">
-        <div class="content-box">
-           <h1>Welcome to Octopus City</h1>
-           <p>Welcome to <b>Octopus City</b>, a sprawling metropolis of innovation, opportunity, and freedom. Built on the foundations of meritocracy and technological progress, Octopus City is where intelligence, hard work, and vision are the keys to success. No kings, no rulers—only those who dare to innovate.</p>
-           <p>In Octopus City, the tentacles of industry, science, and art stretch far and wide, ensuring that those who push boundaries will always find a place to thrive.</p>
-           <p class="tagline">Octopus City: Rise Above. Reach Beyond.</p>
-        </div>
-      </div>
-      <script>
-        setTimeout(() => {
-            window.location.href = "glitch.html";
-        }, 12400);
-      </script>
-  <section> 
-    <!-- Matrix-like background spans -->
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <header>
+            <h1>Enter Passcode</h1>
+        </header>
+        <input type="text" id="Cole" name="Cole" placeholder="Enter Passcode"><br><br>
+        <button onclick="checkPasscode()">Submit</button>
+        <main id="typewriter"></main>
+    </div>
+    <section>
+        <!-- Matrix-like background spans -->
         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -45,8 +33,39 @@
         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-  </section> <!-- partial --> 
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </section>
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+    <script>
+        // Typewriter effect
+        function typeWriterEffect(text, elementId) {
+            const element = document.getElementById(elementId);
+            let i = 0;
+            element.innerHTML = ""; // Clear previous content
+            const interval = setInterval(() => {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 50); // Adjust typing speed here
+        }
 
- </body>
-
+        // Check passcode and display content
+        function checkPasscode() {
+            const passcode = document.getElementById("Cole").value;
+            const typewriter = document.getElementById("typewriter");
+            if (passcode === "Jade-1999") {
+                const content = `Access Granted: Welcome to the Octopus City Archives.`;
+                typeWriterEffect(content, "typewriter");
+            } else {
+                typeWriterEffect("Incorrect Passcode", "typewriter");
+            }
+        }
+    </script>
+</body>
 </html>
+
